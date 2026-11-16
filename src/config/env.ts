@@ -10,6 +10,10 @@ const envSchema = z.object({
 
   // PostgreSQL (Neon)
   DATABASE_URL: z.string().min(1, 'DATABASE_URL is required'),
+  DATABASE_URL_UNPOOLED: z.string().optional(),
+  NEON_BRANCH: z.string().optional(),
+  NEON_BRANCH_ID: z.string().optional(),
+  NEON_FUNCTION_HOST_SUFFIX: z.string().optional(),
 
   // Redis (Upstash)
   REDIS_URL: z.string().min(1, 'REDIS_URL is required'),
