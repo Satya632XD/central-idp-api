@@ -1,0 +1,50 @@
+{
+  "name": "central-idp-api",
+  "version": "1.0.0",
+  "description": "Production-grade Central Identity Provider (IdP) REST API",
+  "main": "dist/src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "rimraf dist && tsc",
+    "start": "node dist/src/server.js",
+    "generate:keys": "tsx scripts/generate-keys.ts",
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push",
+    "prisma:migrate": "prisma migrate deploy"
+  },
+  "keywords": [
+    "idp",
+    "identity-provider",
+    "authentication",
+    "jwt",
+    "passkeys",
+    "webauthn",
+    "fastify",
+    "security"
+  ],
+  "author": "Principal Security Engineer",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cors": "^11.4.3",
+    "@fastify/helmet": "^13.2.0",
+    "@prisma/client": "6.19.3",
+    "@simplewebauthn/server": "^14.1.0",
+    "argon2": "^0.45.2",
+    "dotenv": "^18.0.10",
+    "fastify": "^5.12.8",
+    "ioredis": "^6.0.0",
+    "jose": "^6.2.17",
+    "otplib": "^13.6.0",
+    "resend": "^6.38.1",
+    "twilio": "^6.3.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "prisma": "6.19.3",
+    "rimraf": "^6.1.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
